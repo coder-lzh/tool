@@ -1,3 +1,8 @@
+// 头部导航
+import topNav from "./topNav";
+
+import { vitePressNote } from "./sideBar/vitePressBar";
+
 
 
 import gitee from '../public/svg/gitee.txt'
@@ -26,81 +31,9 @@ const docFooter =  {
     next: '下一页'
 }
 
-// 顶部导航菜单
-// 顶部导航
-const nav = [
-    {text: '首页', link: '/'},
-    {
-        text: '案例1',
-        activeMatch: '/demo1/',
-        items: [
-            {
-                text: 'AAA',
-                items: [
-                    {text: 'A', link: '/demo1/a'},
-                    {text: 'B', link: '/demo1/b'},
-                ]
-            },
-            {
-                text: 'BBB',
-                items: [
-                    {text: 'A', link: '/demo2/a'},
-                    {text: 'B', link: '/demo2/b'},
-                ]
-            },
-        ]
-    },
-    {
-        text: '案例2',
-        activeMatch: '/demo2/',
-        items: [
-            {text: 'A', link: '/demo2/a'},
-            {text: 'B', link: '/demo2/b'},
-        ]
-    }
-]
 // 全局左侧菜单
 const sidebar = {
-    '/demo1/': [
-        {
-            text: '案例1',
-            // 是否可收缩
-            collapsible: true,
-            // 是否折叠
-            collapsed: false,
-            items: [
-                {text: '1-A', link: '/demo1/a'},
-                {text: '1-B', link: '/demo1/b'},
-                {text: '1-C', link: '/demo1/c'}
-            ]
-        },
-        {
-            text: '案例2',
-            // 是否可收缩
-            collapsible: true,
-            // 是否折叠
-            collapsed: false,
-            items: [
-                {text: '2-A', link: '/demo2/a'},
-                {text: '2-B', link: '/demo2/b'},
-                {text: '2-C', link: '/demo2/c'}
-            ]
-        }
-    ],
-    '/demo2/': [
-        {
-            text: '案例2',
-            // 是否可收缩
-            collapsible: true,
-            // 是否默认展开
-            collapsed: true,
-            items: [
-                {text: '2-A', link: '/demo2/a'},
-                {text: '2-B', link: '/demo2/b'},
-                {text: '2-C', link: '/demo2/c'}
-            ]
-        }
-    ]
+    "/note/vitePress": vitePressNote,
 }
 
 // 主题配置
@@ -110,7 +43,7 @@ const themeConfig = {
     socialLinks ,
     footer,
     docFooter,
-    nav,
+    nav:topNav,
     // 全局左侧菜单
     sidebar,
     // 右侧目录标题
